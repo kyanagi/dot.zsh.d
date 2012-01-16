@@ -1,0 +1,6 @@
+How to use:
+put files to ~/.zsh.d and
+% ln -s ~/.zsh.d/.zshenv
+
+I don't claim any rights. Please use freely.
+
