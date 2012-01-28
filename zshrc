@@ -27,6 +27,16 @@ if zle -la history-incremental-pattern-search-backward; then
   bindkey '^S' history-incremental-pattern-search-forward
 fi
 
+## C-w は `/' と `=' で止まるように
+function backward-kill-word-non-greedy {
+  WORDCHARS='*?_-.[]~&;!#$%^(){}<>' zle backward-kill-word
+}
+zle -N backward-kill-word-non-greedy
+bindkey '^W' backward-kill-word-non-greedy
+
+## 元の動作は C-x C-w で
+bindkey "^X^W" backward-kill-word
+
 
 ##################################################
 ### ヒストリ
@@ -277,10 +287,6 @@ setopt auto_pushd
 setopt pushd_ignore_dups
 
 
-
-
-### 単語境界に含まれない文字
-WORDCHARS='*?_-.[]~&;!#$%^(){}<>' # `/'と`='を抜く
 
 
 ### ビルトインコマンドでも run-help を使えるようにする
