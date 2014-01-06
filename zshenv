@@ -44,6 +44,7 @@ typeset -U path
 path=(
   ~/bin(N-/)
   ~/local/bin(N-/)
+  ~/.cask/bin(N-/)
   /opt/ruby19/bin(N-/)
   /usr/local/mysql/bin(N-/)
   /usr/local/teTeX/bin(N-/)
